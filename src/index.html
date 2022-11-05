@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <center>
+      <h1 class="texto">Servidor Full Stack</h1>
+    </center>
+  </header>
+  <main>
+    <center>
+      <nav>
+        <button onclick="mostrar()"> HOME </button>
+        <button onclick="iniciar()"> INICIAR </button>
+        <button onclick="pausar()"> PAUSAR </button>
+        <button onclick="continuar()">CONTINUAR </button>
+        <button onclick="zerar()">ZERAR </button>
+      </nav>
+    </center>
+  </main>
+  <script>
+    const texto = document.querySelector(".texto")
+    function mostrar() {
+      const respostaServidor = fetch("http://localhost:8000/").then(resposta => resposta.text()).then((mensagem) => texto.textContent = mensagem)
+    }
+    function iniciar() {
+      const respostaServidor = fetch("http://localhost:8000/iniciar").then(resposta => resposta.text()).then((mensagem) => texto.textContent = mensagem)
+    }
+    function pausar() {
+      const respostaServidor = fetch("http://localhost:8000/pausar").then(resposta => resposta.text()).then((mensagem) => texto.textContent = mensagem)
+    }
+    function continuar() {
+      const respostaServidor = fetch("http://localhost:8000/continuar").then(resposta => resposta.text()).then((mensagem) => texto.textContent = mensagem)
+    }
+    function zerar() {
+      const respostaServidor = fetch("http://localhost:8000/zerar").then(resposta => resposta.text()).then((mensagem) => texto.textContent = mensagem)
+    }  
+  </script>
+</body>
+</html>
